@@ -35,7 +35,7 @@ An AI-powered web application that digitizes, stores, and analyzes receipts and 
 ##  Project Structure
 
 ```
-Receipt-and-Invoice-Digitizer-Application/
+receipt-digitizer/
 ├── backend/
 │   ├── app.py                    # Main Flask application & API routes
 │   ├── ocr.py                    # PaddleOCR integration & receipt parsing
@@ -58,8 +58,9 @@ Receipt-and-Invoice-Digitizer-Application/
         ├── register_page.html
         ├── home.html
         ├── bill_digitizer.html
-        ├── chatbot.html
+        ├── chatbot.html              # Standalone chatbot page (/chatbot route)
         ├── admin_dashboard.html
+        ├── admin_bill_digitizer.html # Admin bill digitizer (/admin/digitizer route)
         ├── admin_user_receipts.html
         ├── forgotpassword.html
         └── reset_password.html
@@ -163,17 +164,41 @@ MAIL_PASSWORD=your-app-password
 
 ##  API Endpoints
 
+**Auth**
+
 | Method | Endpoint | Description |
 |---|---|---|
-| POST | `/api/login` | User login |
 | POST | `/api/register` | User registration |
+| POST | `/api/login` | User login |
 | POST | `/api/logout` | Logout |
 | POST | `/api/google-login` | Google OAuth login |
-| POST | `/api/forgot-password` | Send password reset email |
-| POST | `/api/reset-password` | Reset password |
+| POST | `/send-reset-mail` | Send password reset email |
+| GET, POST | `/reset-password/<token>` | Reset password via token |
+
+**Receipts**
+
+| Method | Endpoint | Description |
+|---|---|---|
 | POST | `/api/upload` | Upload and digitize a receipt |
+| GET | `/api/receipts` | Get current user's receipts |
+| DELETE | `/api/receipts/<receipt_id>` | Delete a receipt |
+
+**Analytics**
+
+| Method | Endpoint | Description |
+|---|---|---|
+| GET | `/api/analytics/spending` | Daily spending breakdown |
+| GET | `/api/analytics/monthly` | Monthly spending summary |
+| GET | `/api/analytics/vendors` | Top 5 vendors by spend |
+| GET | `/api/analytics/categories` | Category-wise spending |
+
+**Other**
+
+| Method | Endpoint | Description |
+|---|---|---|
 | POST | `/api/chat` | Chat with the AI assistant |
-| GET | `/api/receipts` | Get user's receipts |
+| POST | `/api/contact` | Contact / feedback form |
+| GET | `/api/admin/all-receipts` | All receipts across users (admin only) |
 
 ---
 
@@ -225,9 +250,3 @@ This project was built as part of the **Infosys Springboard** program.
 ---
 
 © 2026 Team D — Infosys Springboard
-
-
-
-
-
-
