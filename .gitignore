@@ -1,0 +1,84 @@
+# ── Python ──────────────────────────────────────────────
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+*.egg
+*.egg-info/
+dist/
+build/
+.eggs/
+.Python
+pip-log.txt
+pip-delete-this-directory.txt
+
+# ── Virtual Environments ─────────────────────────────────
+paddle_env/
+venv/
+env/
+.venv/
+ENV/
+
+# ── Environment & Secrets ────────────────────────────────
+.env
+.env.local
+.env.*.local
+*.pem
+*.key
+*.secret
+
+# ── Database ─────────────────────────────────────────────
+*.db
+*.sqlite
+*.sqlite3
+
+# ── User Uploads ─────────────────────────────────────────
+uploads/*
+!uploads/.gitkeep
+
+# ── PaddleOCR / ML Model Cache ───────────────────────────
+.paddleocr/
+inference/
+*.pdmodel
+*.pdiparams
+*.pdparams
+
+# ── Flask ────────────────────────────────────────────────
+instance/
+.webassets-cache
+flask_session/
+
+# ── Logs ─────────────────────────────────────────────────
+*.log
+logs/
+/tmp/ollama.log
+
+# ── OS Files ─────────────────────────────────────────────
+.DS_Store
+.DS_Store?
+._*
+.Spotlight-V100
+.Trashes
+Thumbs.db
+ehthumbs.db
+desktop.ini
+
+# ── IDE / Editor ─────────────────────────────────────────
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.project
+.settings/
+
+# ── Testing ──────────────────────────────────────────────
+.pytest_cache/
+.coverage
+htmlcov/
+.tox/
+
+# ── Misc ─────────────────────────────────────────────────
+*.bak
+*.tmp
+.cache/
