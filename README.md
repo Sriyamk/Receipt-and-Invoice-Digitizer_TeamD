@@ -35,10 +35,7 @@ An AI-powered web application that digitizes, stores, and analyzes receipts and 
 ##  Project Structure
 
 ```
-receipt-digitizer/
-├── .gitignore
-├── Final_Presentation.pdf
-│
+Receipt-and-Invoice-Digitizer-Application/
 ├── backend/
 │   ├── app.py                    # Main Flask application & API routes
 │   ├── ocr.py                    # PaddleOCR integration & receipt parsing
